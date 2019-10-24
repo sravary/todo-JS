@@ -1,4 +1,4 @@
-# T0D0-LIST IN JavaScript
+# TODO-LIST IN JavaScript
 ............................
 
 Create a simple yet effective TODO-list for practice.
