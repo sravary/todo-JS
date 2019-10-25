@@ -61,17 +61,15 @@ const todoList = {
   }
 };
 
-//1. Access to the buttons
-const displayTodosButton = document.getElementById('displayTodosButton');
-const toggleAllButton = document.getElementById('toggleAllButton');
-
-//2. Run methods when buttons clicked
-displayTodosButton.addEventListener('click', function() {
-  todoList.displayTodos();
-});
-toggleAllButton.addEventListener('click', function() {
-  todoList.toggleAll();
-});
+//Buttons and Actions
+const handlers = {
+  displayTodos: function() {
+    todoList.displayTodos()
+  },
+  toggleAll: function() {
+    todoList.toggleAll();
+  }
+};
 
 
 
