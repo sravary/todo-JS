@@ -7,8 +7,21 @@
 <body>
   <h1>What Do You Wish To Do?</h1>
 
-  <button onclick="handlers.displayTodos()">Display List</button>
-  <button onclick="handlers.toggleAll()">Toggle All</button>
+  <div>
+    <button onclick="handlers.displayTodos()">Display List</button>
+    <button onclick="handlers.toggleAll()">Toggle All</button>
+  </div>
+
+  <div>
+    <input id="addTodoTextInput" type="text">
+    <button onclick="handlers.addTodo()">Add Task</button>
+  </div>
+
+  <div>
+    <input id="changeTodoPositionInput" type="number">
+    <input id="changeTodoTextInput" type="text">
+    <button onclick="handlers.changeTodo()">Edit Task</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
