@@ -66,9 +66,6 @@ const handlers = {
   displayTodos: function() {
     todoList.displayTodos()
   },
-  toggleAll: function() {
-    todoList.toggleAll();
-  },
   addTodo: function() {
     let addTodoTextInput = document.getElementById('addTodoTextInput');
     todoList.addTodo(addTodoTextInput.value);
@@ -86,10 +83,16 @@ const handlers = {
     todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
     deleteTodoPositionInput.value = "";
     alert("Task has been deleted!");
+  },
+  toggleCompleted: function() {
+    let toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
+    todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+    toggleCompletedPositionInput.value = "";
+    alert("Task done... Great Job!");
+  },
+  toggleAll: function() {
+    todoList.toggleAll();
   }
-
-
-
 
 };
 
