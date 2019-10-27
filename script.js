@@ -64,16 +64,16 @@ const handlers = {
     let deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
     todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
     deleteTodoPositionInput.value = "";
-    alert("Task has been deleted!");
     view.displayTodos();
+    alert("Task has been deleted!");
 
   },
   toggleCompleted: function() {
     let toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
     todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
     toggleCompletedPositionInput.value = "";
-    alert("Task done... Great Job!");
     view.displayTodos();
+    alert("Task done... Great Job!");
 
   },
   toggleAll: function() {
