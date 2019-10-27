@@ -49,7 +49,6 @@ const handlers = {
     todoList.addTodo(addTodoTextInput.value);
     addTodoTextInput.value = "";
     view.displayTodos();
-
   },
   changeTodo: function() {
     let changeTodoPositionInput = document.getElementById('changeTodoPositionInput');
@@ -58,15 +57,12 @@ const handlers = {
     changeTodoPositionInput.value = "";
     changeTodoTextInput.value = "";
     view.displayTodos();
-
   },
   deleteTodo: function() {
     let deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
     todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
     deleteTodoPositionInput.value = "";
     view.displayTodos();
-    alert("Task has been deleted!");
-
   },
   toggleCompleted: function() {
     let toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
@@ -74,13 +70,11 @@ const handlers = {
     toggleCompletedPositionInput.value = "";
     view.displayTodos();
     alert("Task done... Great Job!");
-
   },
   toggleAll: function() {
     todoList.toggleAll();
     view.displayTodos();
   }
-
 };
 
 const view = {
