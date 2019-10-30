@@ -33,25 +33,25 @@ const todoList = {
       }
     });
 
-    //Case 1: If everything is true, make everything false
-    if (completedTodos === totalTodos) {
-      //Make everything false
-      // for (let i = 0; i < totalTodos; i++) {
-      //   this.todos[i].completed = false;
-      // }
-      this.todos.forEach(function(todo) {
-        todo.completed = false;
-      });
+    // //Case 1: If everything is true, make everything false
+    // if (completedTodos === totalTodos) {
+    //   //Make everything false
+    //   // for (let i = 0; i < totalTodos; i++) {
+    //   //   this.todos[i].completed = false;
+    //   // }
+    //   this.todos.forEach(function(todo) {
+    //     todo.completed = false;
+    //   });
 
-      //Case 2: Otherwise, make everything true
-    } else {
-      // for (let i = 0; i < totalTodos; i++) {
-      //   this.todos[i].completed = true;
-      // }
-      this.todos.forEach(function(todo) {
-        todo.completed = true;
-      });
-    }
+    //   //Case 2: Otherwise, make everything true
+    // } else {
+    //   // for (let i = 0; i < totalTodos; i++) {
+    //   //   this.todos[i].completed = true;
+    //   // }
+    //   this.todos.forEach(function(todo) {
+    //     todo.completed = true;
+    //   });
+    // }
 
     this.todos.forEach(function(todo) {
       //Case 1: If everything is true, make everything false
@@ -61,7 +61,7 @@ const todoList = {
       } else {
         todo.completed = true;
       }
-    })
+    });
   }
 };
 
@@ -102,9 +102,29 @@ const view = {
   displayTodos: function() {
     let todosUl = document.querySelector('ul');
     todosUl.innerHTML = "";
-    for(let i = 0; i < todoList.todos.length; i++) {
+    // for(let i = 0; i < todoList.todos.length; i++) {
+    //   let todoLi = document.createElement('li');
+    //   let todo = todoList.todos[i];
+    //   let todoTextWithCompletion = "";
+
+    //   if (todo.completed === true) {
+    //     todoTextWithCompletion = '(x) ' + todo.todoText;
+    //   } else {
+    //     todoTextWithCompletion = '( ) ' + todo.todoText;
+    //   }
+
+    //   todoLi.id = i;
+    //   todoLi.textContent = todoTextWithCompletion;
+    //   todoLi.appendChild(this.createDeleteButton());
+    //   todosUl.appendChild(todoLi);
+    // }
+
+    // NOTE:
+    // "this" //refers to the view object above
+    // forEach(callback, this)
+
+    todoList.todos.forEach(function(todo, position) {
       let todoLi = document.createElement('li');
-      let todo = todoList.todos[i];
       let todoTextWithCompletion = "";
 
       if (todo.completed === true) {
@@ -113,11 +133,11 @@ const view = {
         todoTextWithCompletion = '( ) ' + todo.todoText;
       }
 
-      todoLi.id = i;
+      todoLi.id = position;
       todoLi.textContent = todoTextWithCompletion;
       todoLi.appendChild(this.createDeleteButton());
       todosUl.appendChild(todoLi);
-    }
+    }, this);
   },
   createDeleteButton: function() {
     let deleteButton = document.createElement('button');
